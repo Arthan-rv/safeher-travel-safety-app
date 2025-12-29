@@ -1,182 +1,140 @@
-🛡️ SafeHer Travel — Tourist Safety App
 
-A panic-safe mobile application designed to support solo women travelers during emergency situations.
-The app focuses on fast SOS activation, clear emergency states, and future-ready backend integration.
+# SafeHer Travel — Tourist Safety App (Frontend)
 
-📌 Problem Statement
+SafeHer Travel is a **mobile-first safety application** designed to support **solo women travellers** during emergencies and risky situations.  
+This repository contains the **Flutter frontend** of the project, focusing on user experience, SOS workflows, and safety-oriented UI/UX.
 
-Solo travelers—especially women—often face safety risks such as:
+---
 
-Lack of immediate help during emergencies
+## 🚨 Problem Statement
 
-Inability to quickly alert trusted contacts
+Solo women travellers often face:
+- Unsafe or unfamiliar environments
+- Delayed access to emergency help
+- Lack of trusted contacts nearby
+- Panic situations where quick action is critical
 
-Panic-induced decision paralysis
+SafeHer Travel addresses these challenges by providing a **panic-safe SOS system**, live location sharing, and access to nearby help.
 
-SafeHer Travel addresses this by providing a single-action SOS system with a stress-proof user experience.
+---
 
-🎯 Core Objective
+## 🎯 Target Users
+- Solo women travellers
+- Women commuting late hours
+- Tourists in unfamiliar locations
 
-To build a panic-safe, reliable, and scalable tourist safety app that allows users to:
+---
 
-Trigger emergency alerts quickly
+## 🧩 Features Implemented (Frontend Phase 1)
 
-Share location during distress
+### ✅ Authentication UI
+- Login page
+- Signup page
+- Navigation between auth screens
 
-Reassure users that help is being notified
+### ✅ SOS Emergency Flow
+- Long-press **SOS trigger**
+- Countdown screen with:
+  - Back button disabled
+  - Cancel SOS option
+- SOS sent confirmation screen
+- “I’M SAFE” acknowledgement with haptic feedback
 
-Safely exit emergency mode when secure
+### ✅ Safety Dashboard
+- Live location (UI placeholder)
+- Nearby help (UI placeholder)
+- AI Safety Assistant (UI placeholder)
 
-🧩 Project Architecture (Current Phase)
-✅ Phase 1 — Frontend (COMPLETED)
+### ✅ UX & Safety Enhancements
+- Panic-safe interactions
+- Back navigation locking on critical screens
+- Clean, minimal, accessibility-friendly UI
+- Haptic feedback on safety actions
 
-Flutter-based cross-platform UI
+---
 
-Panic-safe SOS UX flow
+## 🗂️ Project Structure
 
-Clean screen separation
-
-Service layer abstraction (mock backend)
-
-Demo-ready and stable
-
-🔄 Phase 2 — Backend (IN PROGRESS / NEXT)
-
-Flask-based REST API
-
-SOS persistence and lifecycle management
-
-SMS / alert integrations
-
-Location tracking
-
-📱 Application Flow (Frontend)
-Login
-  ↓
-Home Screen
-  ↓ (Long Press)
-SOS Countdown (Cancel possible)
-  ↓
-SOS Alert Sent
-  ↓
-"I'm Safe" → Return to Home
-
-Panic-Safe UX Features
-
-Long-press SOS to avoid accidental triggers
-
-Countdown with cancel option
-
-Back button disabled during SOS states
-
-Haptic feedback on critical actions
-
-Single-purpose emergency screens
-
-🧠 Tech Stack
-Frontend
-
-Flutter (Dart)
-
-Material UI
-
-State-managed screen flow
-
-Backend (Planned)
-
-Python (Flask)
-
-REST APIs
-
-SQLite / PostgreSQL
-
-SMS Gateway (Twilio / Fast2SMS)
-
-📂 Project Structure
+```
 lib/
-├── main.dart
-├── screens/
-│   ├── login_page.dart
-│   ├── signup_page.dart
-│   ├── home_page.dart
-│   ├── sos_countdown_page.dart
-│   └── sos_sent_page.dart
-├── services/
-│   └── sos_service.dart   // mock backend abstraction
+ ├── screens/
+ │    ├── login_page.dart
+ │    ├── signup_page.dart
+ │    ├── home_page.dart
+ │    ├── sos_countdown_page.dart
+ │    └── sos_sent_page.dart
+ │
+ ├── services/
+ │    └── sos_service.dart
+ │
+ └── main.dart
+```
 
-🔗 SOS API Contract (Planned)
-Trigger SOS
-POST /api/sos
+---
 
+## 🛠️ Tech Stack
 
-Request
+- **Flutter** (Dart)
+- Material Design
+- Cross-platform (Android, iOS, Web, Desktop)
 
-{
-  "user_id": "string",
-  "location": { "lat": 0.0, "lng": 0.0 },
-  "timestamp": "ISO-8601"
-}
+---
 
+## 🚀 Getting Started
 
-Response
+### Prerequisites
+- Flutter SDK (stable)
+- Android Studio / VS Code
+- Chrome / Android Emulator
 
-{
-  "sos_id": "SOS_123456",
-  "status": "sent"
-}
-
-Resolve SOS
-POST /api/sos/{sos_id}/resolve
-
-👥 Team Workflow
-
-main branch → stable code only
-
-Frontend frozen after Phase 1
-
-Backend & ML work on separate branches
-
-All merges via pull requests
-
-🚀 How to Run (Frontend)
+### Setup
+```bash
+git clone https://github.com/Arthan-rv/safeher-travel-safety-app.git
+cd tourist_safety_app
 flutter pub get
 flutter run
+```
 
+---
 
-Supports:
+## 🔮 Planned Features (Next Phases)
 
-Chrome (web)
+- Backend integration (Firebase / Flask API)
+- Real-time GPS tracking
+- SOS alerts to trusted contacts
+- Police & hospital locator using Maps API
+- AI-powered safety chatbot
+- Background location & notifications
+- Secure authentication & user profiles
 
-Android Emulator
+---
 
-Physical Android devices
+## 👥 Team Collaboration
 
-📌 Current Status
+This repository is maintained as the **frontend layer**.
 
-🟢 Frontend: Completed (Phase 1)
+### Branch Policy
+- `main` / `master` → stable frontend
+- `backend` → backend & APIs
+- `ml` → AI / ML models
+- `integration` → full system testing
 
-🟡 Backend: In Progress
+> ⚠️ Do not push directly to main without review.
 
-⚪ ML / Risk Analysis: Planned
+---
 
-📣 Future Enhancements
+## 🏫 Academic Context
 
-Real-time location streaming
+This project is developed as part of a **tourist safety and emergency solution initiative**, focusing on real-world social impact and women safety.
 
-SMS & push notifications
+---
 
-Nearby help (police / hospitals)
+## 📌 Disclaimer
 
-AI-based risk detection
+This is a **prototype frontend**.  
+Emergency features are simulated for demonstration and academic purposes.
 
-Multilingual support
+---
 
-📄 License
-
-This project is developed for academic and demonstration purposes.
-
-✅ Next Step for Team Members
-
-Pull latest main
-
-Start backend development using the defined SOS API contract
+## 📄 License
+Educational / Academic Use Only
